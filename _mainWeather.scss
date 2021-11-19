@@ -1,0 +1,223 @@
+.main_weather{
+  width: 90%;
+		padding:2rem;
+		margin-top:5rem;
+		background:var(--main-back-color);
+		display:flex;
+		flex-direction:column;
+		justify-content:center;
+		align-items:center;
+		gap:1rem;
+
+    .weather_intro{
+      width: 100%;
+
+      h2{
+        text-transform:capitalize;
+        font-size:1.2rem;
+        text-align:center;
+        color:var(--bright-color);
+
+        #city{
+          color:var(--head-color);
+          text-transform:uppercase;
+        }
+      }
+    }
+
+    .weather_info{
+      width: 100%;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+
+      .date{
+        width: 70%;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        padding:1rem;
+        border-bottom:1px solid var(--shadow-color);
+
+        .w_y{
+          display:flex;
+          justify-content:center;
+          align-items:center;
+          gap:2rem;
+
+          #year{
+            color:var(--head-color);
+            font-size:2rem;
+          }
+
+          #weekday{
+          color:var(--shadow-color);
+          text-transform:capitalize;
+          }
+        }
+
+        .m_d{
+          display:flex;
+          gap:.7rem;
+          text-transform:uppercase;
+          #day{
+            text-transform:lowercase;
+          }
+        }
+      }
+
+      .weather_temp{
+        width: 70%;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        padding:1rem;
+        border-bottom:1px solid var(--shadow-color);
+        gap:.5rem;
+
+        h2{
+          color:var(--head-color);
+        }
+
+        h3{
+        font-size:.8rem;
+        color:var(--shadow-color);
+          
+          .text_temp{
+            font-size:1.2rem;
+            color:var(--bright-color);
+          }
+
+        }
+        .h_l{
+          display:flex;
+          justify-content:center;
+          align-items:center;
+          gap:1rem;
+
+          h3{
+            #high_temp{
+              color:var(--high-color);
+            }
+
+            #low_temp{
+              color:var(--low-color);
+            }
+          }
+
+      }
+    }
+
+     .wind{
+      width: 70%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:1rem;
+      gap:2rem;
+
+      .compass{
+        width: 3rem;
+        height: 3rem;
+        background: var(--bright-color);
+        border-radius:50%;
+        position:relative;
+
+        &::after{
+          position: absolute;
+          content:"";
+          width: .5rem;
+          height: .5rem;
+          left:50%;
+          top:50%;
+          border-radius:50%;
+          transform:translate(-50%,-50%);
+          background: var(--high-color);
+          z-index:2;
+       }
+
+        #compass_pointer{
+          --compass-rotate:33;
+            position: absolute;
+            width: .5rem;
+            height: 1.5rem;
+            left:50%;
+            transform:translate(-50%) rotate(calc(var(--compass-rotate)*1deg));
+            clip-path:polygon(50% 0,0 100%,100% 100%);
+            background: var(--high-color);
+          transform-origin: bottom;
+        }
+      }
+     }
+
+    }
+
+    .weather_type{
+      width: 100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+
+      .show_weather_type{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        gap:1rem;
+
+        #weather_type_text{
+          text-transform:capitalize;
+          font-size:1.5rem;
+        }
+
+        #weather_type_img{
+          width: 5rem;
+          height: 5rem;
+        }
+
+      }
+
+      .cel_or_fah{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        gap:.3rem;
+        user-select:none;
+
+        .fah{
+          color:var(--low-color);
+        }
+
+        #change_type{
+          width: 2rem;
+          height: .8rem;
+          border:1px solid var(--bright-color);
+          border-radius:1rem;
+          position:relative;
+          cursor:pointer;
+
+          &::after{
+            content:"";
+            position: absolute;
+            width: .6rem;
+            height: .58rem;
+            left:0.05rem;
+            top:.05rem;
+            background: var(--bright-color);
+            border-radius:50%;
+            transition:.4s ease-out;
+          }
+
+          &.after::after{
+            left:1.2rem;
+            background:var(--low-color);
+          }
+          
+        }
+
+      }
+
+    }
+}

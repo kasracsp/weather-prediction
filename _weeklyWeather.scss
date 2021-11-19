@@ -1,0 +1,145 @@
+.weekly_weather{
+  position:fixed;
+  width: 100vw;
+  left:0;
+  bottom:0;
+  right:0;
+  background: var(--bright-color);
+  color: var(--dark-color);
+  z-index:8;
+  transform:translateY(75%);
+  transition:.4s;
+  padding-bottom: 1rem;
+  box-shadow: 0 0 1rem .2rem var(--little-dark-color);
+  &.open{
+		transform:translateY(0);
+  }
+
+  #up_down{
+		position: absolute;
+		top:-2.4rem;
+		left:50%;
+		transform:translate(-50%);
+		width: 10rem;
+		clip-path:polygon(50% 0,0 100%,100% 100%);
+		background: var(--bright-color);
+		color: var(--little-dark-color);
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		cursor:pointer;
+
+    &:hover{
+      color: var(--dark-color);
+    }
+
+    span{
+      font-size:2rem;
+      font-weight:bold;
+      transform: translateY(-0.1rem);
+      transition:.3s ease-out;
+    }
+
+    &.turn span{
+      transform:rotateX(180deg)translateY(-.3rem);
+    }
+  }
+
+  .week_text{
+    width: 100%;
+    text-align:center;
+    color:var(--little-dark-color);
+    padding:1rem 2rem 1rem;
+    text-transform:uppercase;
+    user-select: none;
+  }
+
+  &.open .week_text{
+    text-align:left;
+  }
+
+  .next_week_weathers{
+    width: 100%;
+		display:grid;
+		grid-template-columns:repeat(2,1fr);
+		gap:1rem;
+    justify-content: center;
+    align-items: center;
+
+    .next_week_weather{
+      display:flex;
+      width: 10rem;
+      margin: 0 auto;
+      flex-direction:column;
+      gap:.3rem;
+      padding:1rem .5rem;
+      opacity:0;
+      background: var(--main-back-color);
+      color: var(--bright-color);
+      border-radius: .5rem;
+
+      &:hover{
+        box-shadow:0 0 .6rem var(--dark-color);
+      }
+
+      .next_date{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        gap:1rem;
+      }
+
+      .next_high_low{
+        display:flex;
+        justify-content:space-between;
+        align-items:center; 
+        font-size: .7rem; 
+
+          & p .next_high{
+            color:var(--high-color);
+          }
+          & p .next_low{
+            color:var(--low-color);
+          }  
+        }
+        .next_type{
+          display:flex;
+          justify-content:space-between;
+          align-items:center;
+          gap:1rem;
+
+          .next_type_text{
+            font-size: 1rem;
+          }
+          .next_type_img{
+            width: 1.5rem;
+            height: 1.5rem;
+          }
+        }
+    }
+  }
+
+
+  &.open .next_week_weathers .next_week_weather{
+		animation:slideIn 750ms ease-out forwards;
+
+    &:nth-child(1){
+      animation-delay:.1s;
+    }
+    &:nth-child(2){
+      animation-delay:.125s;
+    }
+    &:nth-child(3){
+      animation-delay:.15s;
+    }
+    &:nth-child(4){
+      animation-delay:.175s;
+    }
+    &:nth-child(5){
+      animation-delay:0.2s;
+    }
+    &:nth-child(6){
+      animation-delay:.225s;
+    }
+  }
+}

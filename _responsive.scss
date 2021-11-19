@@ -1,0 +1,154 @@
+@include sm-screen{
+  .main_weather{
+    width: 70%;
+    .weather_intro{
+      width: 100%;
+
+      h2{
+        text-transform:capitalize;
+        font-size:1.35rem;
+        text-align:center;
+        color:var(--bright-color);
+
+        #city{
+          color:var(--head-color);
+          text-transform:uppercase;
+        }
+      }
+    }
+
+    .weather_info{
+      font-size:1.3rem;
+    }
+
+    .weather_type{
+      .show_weather_type{
+        #weather_type_text{
+          font-size:1.8rem;
+        }
+      }
+    }
+  }
+  .weekly_weather{
+    transform:translateY(60%);
+
+    .week_text{
+      padding: 1rem 2rem 2rem;
+    }
+    .next_week_weathers{
+      padding: 1rem 3rem;
+      gap: 2rem;
+      
+      .next_week_weather{
+        width: 15rem;
+        .next_high_low{ 
+          font-size: 1rem;
+        } 
+
+        .next_type{
+          .next_type_img{
+          width: 2rem;
+          height: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+@include md-screen{
+  .main_weather{
+    .weather_intro{
+      width: 100%;
+
+      h2{
+        text-transform:capitalize;
+        font-size:1.9rem;
+        text-align:center;
+        color:var(--bright-color);
+
+        #city{
+          color:var(--head-color);
+          text-transform:uppercase;
+        }
+      }
+    }
+
+    .weather_info{
+      width: 80%;
+    }
+    
+    .weather_type{
+      .show_weather_type{
+        #weather_type_text{
+          font-size:2.2rem;
+        }
+      }
+    }
+  }
+  .weekly_weather{
+    .next_week_weathers{
+      padding: 1rem 5rem;
+      gap: 4rem;
+      font-size: 1.2rem;
+
+      .next_week_weather{
+        width: 20rem;
+        padding: 1rem 2rem;
+      }
+    }
+  }
+}
+@include lg-screen{
+  .main_weather{
+    width: 80%;
+    margin-top:10rem;
+
+    .weather_info{
+      flex-direction:row;
+      padding: 3rem 0;
+      width: 100%;
+
+      .date{
+        border-bottom: none;
+        padding:2rem;
+        border-right: 1px solid var(--shadow-color);
+      }
+
+      .weather_temp{
+        border-bottom: none;
+        padding:.9rem 2rem;
+        border-right: 1px solid var(--shadow-color);
+      }
+
+      .wind{
+        padding:2rem;
+      }
+
+    }
+
+  }
+  .weekly_weather{
+    .next_week_weathers{
+      font-size: 1.5rem;
+      padding: 1rem 7rem;
+      gap: 5rem;
+
+      .next_week_weather{
+        width: 25rem;
+      }
+    }
+  }
+}
+@include xlg-screen{
+  .main_weather{
+    width: 70%;
+    margin-top:10rem;
+  }
+  .weekly_weather{
+    .next_week_weathers{
+      .next_week_weather{
+        padding: 1rem 3rem;
+      }
+    }
+  }
+}

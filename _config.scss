@@ -1,0 +1,28 @@
+*,*::before,*::after{
+  box-sizing:border-box;
+  border:0;
+  margin:0;
+  padding:0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@mixin sm-screen{
+  @media  screen and(min-width:576px) {
+      @content;
+  }
+}
+@mixin md-screen{
+  @media  screen and(min-width:768px) {
+      @content;
+  }
+}
+@mixin lg-screen{
+  @media  screen and(min-width:1000px) {
+      @content;
+  }
+}
+@mixin xlg-screen{
+  @media  screen and(min-width:1200px) {
+      @content;
+  }
+}

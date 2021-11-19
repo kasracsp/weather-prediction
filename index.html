@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="weatherApp.css">
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&family=Montserrat:wght@600&display=swap" rel="stylesheet">  
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="script.js" type="module"></script>
+    <title>wheaterApp</title>
+</head>
+<body>
+		<div class="main_weather">
+				
+				<div class="weather_intro">
+						<h2>latest weather at <span id="city"></span></h2>
+				</div>
+				
+				<div class="weather_info">
+						
+						<div class="date">
+								<div class="w_y">
+								  <h4 id="weekday"></h4>
+								  <h2 id="year"></h2>
+								</div>
+								<div class="m_d">
+							   	<h4 id="month"></h4>
+										<h4 id="day"></h4>
+								</div>
+						</div>
+						
+						<div class="weather_temp">
+								<h2>Temperature</h2>
+								<div class="h_l">
+							   	<h3>High: <span class="text_temp" id="high_temp"></span></h3>
+								  <h3>Low: <span class="text_temp" id="low_temp"></span></h3>
+								</div>
+								<h3>Humidity: <span id="humidity" class="text_temp"></span></h3>
+						</div>
+						
+						<div class="wind">
+								<div class="compass">
+										 <span id="compass_pointer"></span>
+								</div>
+								<div class="wind_speed">
+											<h3>wind</h3>
+											<h4><span id="speed"></span> kph</h4>
+								</div>
+						</div>
+						
+				</div>
+				
+				<div class="weather_type">
+						<div class="show_weather_type">
+						 <h2 id="weather_type_text"></h2>
+						 <img src="" id="weather_type_img">
+						</div>
+						<div class="cel_or_fah">
+								<span class="cel">°C</span>
+								<span id="change_type"></span>
+								<span class="fah">°F</span>
+						</div>
+				</div>
+		</div>
+
+	<div class="weekly_weather">
+			<button id="up_down">
+				<span>&#8593</span>
+			</button>
+			<h2 class="week_text">Next 2 days</h2>
+			<div class="next_week_weathers"></div>
+	</div>
+
+	<button id="search">
+		<span class="material-icons">search</span>
+	</button>
+
+	<div id="search_modal">
+			<div id="search_form">
+				<input type="text" id="search_text" placeholder="City name" required autofocus>
+				<button id="submit">search</button>
+			</div>
+			<!-- <button id="my_location">
+					<span class="material-icons">place</span>Use my location
+			</button> -->
+			<button id="close_modal">
+					<span class="material-icons">close</span>
+			</button>
+	</div>
+
+	<div id="overlay">
+	</div>
+	</body>
+</html>

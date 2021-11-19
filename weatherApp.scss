@@ -1,0 +1,38 @@
+@import 'mainWeather';
+@import 'weeklyWeather';
+@import 'config';
+@import 'responsive';
+@import 'search';
+
+body{
+  --bright-color:#fff;
+  --shadow-color:#bebebe;
+  --dark-color:#000;
+  --little-dark-color:#555;
+  --head-color:gold;
+  --low-color:#0af;
+  --high-color:#F73718;
+  --main-back-color:rgba(17,34,51,.9);
+		width: 100vw;
+		height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+		background-image:url("images/1.jpg");
+		background-position:center center;
+		background-size:cover;
+		display:flex;
+		justify-content:center;
+		align-items:flex-start;
+		color:var(--bright-color);
+		background-size:cover;
+}
+@keyframes slideIn{
+  0%{
+      opacity:0;
+      transform:translateY(10rem);
+  }
+  100%{
+      opacity:1;
+      transform:translateY(0);
+  }
+}
