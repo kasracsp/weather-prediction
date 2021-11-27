@@ -381,7 +381,8 @@
   width: 100%;
   display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -821,7 +822,7 @@ body {
   --bright-color:#fff;
   --shadow-color:#bebebe;
   --dark-color:#000;
-  --little-dark-color:#444;
+  --little-dark-color:#555;
   --head-color:gold;
   --low-color:#0af;
   --high-color:#F73718;
