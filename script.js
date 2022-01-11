@@ -60,7 +60,11 @@ upDown.addEventListener("click",()=>{
 })
 //set city location by IP
 let tempHolder
-setCityLoc().catch(err=>console.log(err))
+setCityLoc().catch(err=>{
+	console.log(err)
+	searchedCity="london"
+	setTemperature()
+})
 async function setCityLoc() {
 	const foundCity=await fetch('https://ip-geolocation.whoisxmlapi.com/api/v1?apiKey='+IP_key+'')
 	const jsonFoundCity=await foundCity.json()
@@ -252,6 +256,9 @@ function showModal() {
 		searchEl.classList.add("open")
 		searchModal.classList.add("open")
 		overlayEl.classList.add("open")
+		if(searchModal.classList.contains("open")){
+			searchText.focus()
+		}
 }
 function hiddenModal() {
 		searchEl.classList.remove("open")
