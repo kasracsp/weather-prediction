@@ -62,9 +62,10 @@ upDown.addEventListener("click",()=>{
 let tempHolder
 setCityLoc().catch(err=>console.log(err))
 async function setCityLoc() {
-	const foundCity=await fetch('https://ip-geolocation.whoisxmlapi.com/api/v1?apiKey='+IP_key+'')
+	const foundCity=await fetch('https://ip-geolocation.whoisxmlapi.com/api/v1?apiKey='+IP_key+'&ipAddress=8.8.8.8')
 	const jsonFoundCity=await foundCity.json()
 	searchedCity=jsonFoundCity.location.city
+	console.log(jsonFoundCity.location)
 	setTemperature().catch(err=>console.log(err))
 }
 //set the temperature
